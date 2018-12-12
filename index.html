@@ -46,50 +46,17 @@
 					<h5>Para que e por que usar?</h5>
 					<ul>
 						<li>Padronização</li>
-						<li>Compartinhamento</li>
-						<li>Testes</li>
-						<li>Fix de bugs</li>
+						<li>Portável</li>
+						<li>Escalável</li>
+						<li>Compartilhamento</li>
 						<li>Deploy simplificado</li>
+						<li>Testes</li>
+						<li>Microserviços</li>
 					</ul>
 				</section>
 				<section>
 					<h5>Docker Compose</h5>
 					<img src="img/docker-compose.png" alt="">
-				</section>
-				<section>
-					<section>
-						<h1>Como usar?</h1>
-					</section>
-					<section>
-						<h1>Instalação</h1>
-					</section>
-					<section>
-						<h1>Configurações adicionais</h1>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Commandos básicos</h1>
-					</section>
-					<section>
-						<pre><code class="hljs" data-trim contenteditable>
-							docker-compose up
-							docker-compose down
-						</code></pre>
-					</section>
-					<section>
-						<pre><code class="hljs" data-trim contenteditable>
-							docker-compose start
-							docker-compose stop
-							docker-compose restart
-						</code></pre>
-					</section>
-					<section>
-						<pre><code class="hljs" data-trim contenteditable>
-							docker-compose ps
-							docker-compose images
-						</code></pre>
-					</section>
 				</section>
 				<section>
 					<section>
@@ -105,38 +72,63 @@
 					</section>
 					<section>
 						<h5>Implementação</h5>
-						<h5>1 - Clone Laradock inside your PHP project:</h5>
+						<h5>1 - Clonar o Laradock na pasta acima de seu projeto PHP:</h5>
 						<pre><code class="hljs" data-trim contenteditable>
 							git clone https://github.com/Laradock/laradock.git
 						</code></pre>
 					</section>
 					<section>
 						<h5>Implementação</h5>
-						<h5>2 - Enter the laradock folder and rename env-example to .env.</h5>
+						<h5>2 - Acessar a pasta laradock e copiar o env-example como .env</h5>
 						<pre><code class="hljs" data-trim contenteditable>
 							cp env-example .env
 						</code></pre>
 					</section>
 					<section>
 						<h5>Implementação</h5>
-						<h5>3 - Open your laradock’s .env file and set the following.</h5>
+						<h5>3 - Abra seu aquivo .env do laradock e configure o seguinte:</h5>
 						<pre><code class="hljs" data-trim contenteditable>
+							APP_CODE_PATH_HOST=../{project-name}/
 							MYSQL_VERSION=5.7
 						</code></pre>
 					</section>
 					<section>
 						<h5>Implementação</h5>
-						<h5>4 - Run your containers:</h5>
+						<h5>4 - Rode os containers:</h5>
 						<pre><code class="hljs" data-trim contenteditable>
 							docker-compose up -d nginx mysql
 						</code></pre>
 					</section>
 					<section>
 						<h5>Implementação</h5>
-						<h5>Open your browser and visit localhost: http://localhost.</h5>
+						<h5>Abra seu navegador e visite o localhost: http://localhost</h5>
 						<pre><code class="hljs" data-trim contenteditable>
-							That's it! enjoy :)
+							Está pronto! :]
 						</code></pre>
+					</section>
+					<section>
+						<section>
+							<h1>Commandos básicos</h1>
+						</section>
+						<section>
+							<pre><code class="hljs" data-trim contenteditable>
+								docker-compose up
+								docker-compose down
+							</code></pre>
+						</section>
+						<section>
+							<pre><code class="hljs" data-trim contenteditable>
+								docker-compose start
+								docker-compose stop
+								docker-compose restart
+							</code></pre>
+						</section>
+						<section>
+							<pre><code class="hljs" data-trim contenteditable>
+								docker-compose ps
+								docker-compose images
+							</code></pre>
+						</section>
 					</section>
 				</section>
 			</div>
