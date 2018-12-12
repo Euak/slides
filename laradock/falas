@@ -1,0 +1,37 @@
+- O que é Docker?
+Docker é uma plataforma em Go que permite o gerenciamento de contanaires para a virtualização de ambientes para o desenvolvimento, testes e produção de sistemas/aplicações
+Ou seja, a partir do Docker você consegue isolar o ambiente de execução de serviços (Ex.: PHP, Apache e MySQL) em containers.
+
+- Containers
+O container é um ambiente isolado.  Assim, o Docker apenas utiliza os recursos necessários para a sua execução.
+
+- Imagens
+Os containers são criados a partir de imagens Docker. Uma imagem é um pacote executável que inclui tudo que precisa para rodar um aplicação, o código, as bibliotecas, as variáveis de ambiente e os arquivos de configuração.
+
+Portanto, um container é uma instância de uma imagem
+
+- Docker Vs. VMs
+VMs são abstrações de hardware físico tornando um servidor em vários servidores. O Hypervisor permite multiplicar VMs em uma única máquina. E cada VM inclui uma cópia completa de um sistema operacional, bibliotecas e executáveis necessários, além da própria aplicação. Além disso, são lentos de bootar.
+
+*Vagrant cria uma maquina virtual bem mais rapidamente e é destinado para padronizar o ambiente de desenvolvimento através de times multi-plataforma.
+
+- Pra que e por que usar?
+Padronização: mesmo ambiente entre devs, ambiente de testes, homologação e produção
+Portável: Você pode buildar localmente, dar deploy para o cloud e executar em qualquer lugar
+Escalável: Você pode aumentar e automaticamente distribuir replicas de Containers
+Compartilhamento: fácil compartilhamento entre devs do ambiente (git)
+Deploy simplificado: ambiente já definido pelos arquivos Docker que são construídos automaticamente
+Testes: para automatização de testes
+Mocrosserviços: conteinerização de serviços
+
+Flexível: os mais variados tipos e tamanho de aplicações pode ser conteinerizado
+Leve: Containers compartilham o mesmo kernel do host
+Intercambiável: Você pode fazer o deploy e atualizações on-the fly
+Estalcavél: Você pode estaquear serviços verticamente e on-the-fly
+
+- Docker compose
+Simplesmente a instalação do Docker possibilita o gerencimento de apenas um container para cada aplicação. Com o docker-compose podemos gerenciar múltiplos containers para uma única aplicação, o qual chamaremos esse containers de serviços. Assim, como cada container possui um Dockerfile que ele referencia. Uma aplicação com mais de um containers, ou serviços, faz referência a um docker-compose.yml.
+
+- Laradock
+É um projeto de ambiente completo PHP para Docker. O Laradock inclui imagens Docker pre empacotadas e todas pre configuradas. Iniciou com o foco para ambientes de projetos Laravel, porém devido ao seu crescimento suporta projetos PHP como Symfony, CodeIgniter, WordPress, Drupal e outros. Ou seja, ele já inclui Dockerfiles e um docker-compose.yml para diversos serviços já configurados para fácil manipulação por meio de um aquivo de ambiente .env.
+Além disso, o Laradock acompanha um ambiente de desenvolviment, o workspace, que contém uma série de ferramentas úteis, todas já pré configuradas. Como php-cli, composer, git, node, vim e etc

@@ -1,0 +1,33 @@
+Docker
+ - O que é Docker?
+	- Imagens
+	- Containers
+ - Docker Vs. VM
+ - Por que usá-lo?
+ - Como usar?
+	- Instalação
+	- Configuração (modo usuário)
+	- Comandos básicos
+ - O que é o laradock?
+ - Como usar?
+	- Modos de usar (single project, multiple projects)
+	- Implementação (clone, configurações,...)
+	- docker-compose up
+
+* Não esquecer de mudar a versão do MySQL
+* mudar a ownership do diretorio raiz para laradock (chown -R laradock ./)
+* para rodar o npm install
+rm -rf node_modules
+rm package-lock.json
+npm install
+
+revealjs
+
+
+Piloto
+ - clone do laradock
+ - copia do .env do laradock e
+ 	- editar a versão do MySQL para 5.7
+	- mostrar a variável APP_CODE_PATH_HOST
+ - rodar "docker-compose up -d nginx mysql"
+ - configurar o .env
