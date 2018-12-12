@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Laradock</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h5>O que é Docker?</h5>
+						<img src="img/Docker_logo.png" alt="">
+					</section>
+					<section>
+						<h5>Container Docker</h5>
+						<img src="img/what-is-container.png" alt="">
+					</section>
+					<section>
+						<h5>Imagem Docker</h5>
+						<img src="img/docker-images.png" alt="">
+					</section>
+				</section>
+				<section>
+					<h5 style="text-transform: none;">Docker Vs VMs</h5>
+					<img src="img/DockerVsVm.jpg" alt="">
+				</section>
+				<section>
+					<h5>Para que e por que usar?</h5>
+					<ul>
+						<li>Padronização</li>
+						<li>Compartinhamento</li>
+						<li>Testes</li>
+						<li>Fix de bugs</li>
+						<li>Deploy simplificado</li>
+					</ul>
+				</section>
+				<section>
+					<h5>Docker Compose</h5>
+					<img src="img/docker-compose.png" alt="">
+				</section>
+				<section>
+					<section>
+						<h1>Como usar?</h1>
+					</section>
+					<section>
+						<h1>Instalação</h1>
+					</section>
+					<section>
+						<h1>Configurações adicionais</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Commandos básicos</h1>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+							docker-compose up
+							docker-compose down
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+							docker-compose start
+							docker-compose stop
+							docker-compose restart
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+							docker-compose ps
+							docker-compose images
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h5>Laradock</h5>
+						<img src="img/laradock.jpg" alt="">
+					</section>
+					<section>
+						<h5>Modos de usar</h5>
+						<ul>
+							<li>Projeto Único</li>
+							<li>Múltiplos Projetos</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Implementação</h5>
+						<h5>1 - Clone Laradock inside your PHP project:</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+							git clone https://github.com/Laradock/laradock.git
+						</code></pre>
+					</section>
+					<section>
+						<h5>Implementação</h5>
+						<h5>2 - Enter the laradock folder and rename env-example to .env.</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+							cp env-example .env
+						</code></pre>
+					</section>
+					<section>
+						<h5>Implementação</h5>
+						<h5>3 - Open your laradock’s .env file and set the following.</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+							MYSQL_VERSION=5.7
+						</code></pre>
+					</section>
+					<section>
+						<h5>Implementação</h5>
+						<h5>4 - Run your containers:</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+							docker-compose up -d nginx mysql
+						</code></pre>
+					</section>
+					<section>
+						<h5>Implementação</h5>
+						<h5>Open your browser and visit localhost: http://localhost.</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+							That's it! enjoy :)
+						</code></pre>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

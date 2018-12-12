@@ -1,0 +1,35 @@
+Por que usar?
+
+Docker oferece ferramentas e uma plataforma para gerenciar o ciclo de vida de seus containers:
+
+- Desenvolva sua aplicação e seu componentes de suportes com containers;
+- O container se torna a unidade para distribuir e testar sua aplicação
+- Quando pronto, dê deploy da sua aplicação no ambiente de produção, como um container ou como um serviço orquestrado. Isso funciona da mesma maneira memse tendo seu ambiente de produção em um data center, cloud, ou híbrido
+
+Pra que usar?
+
+Docker agiliza o ciclo de desenvolvimento permitindo os desenvolvedores trabalharem em ambientes padronizados usando containers locais. São ótimos para continuos integration e continuous delivery.
+
+Cenários:
+ - Desenvolvedores codam localmente e compartilham seus trabalhos com os colegas usando containers Docker
+ - Eles usam docker para subir suas aplicações no ambiente de teste e executar testes automatizados e manuais
+ - Quando os devs encontrarem bugs, eles podem corrigir ekes no ambiente de desenvolvimento e redeployar eles no ambiente de teste para testar velidar
+ - Quando um teste acaba, subir o fix para o cliente basta subir a imagem atualizada no ambiente de produção
+
+Vantagens Docker (vs VM)
+ - Padronizado e portável
+ - Leve: containers compartilham do mesmo kernel e não necessitam de um OS por aplicação
+ - Seguro: é isolado
+
+ As VMs necessitam de um hipervisor e uma cópia completa de um sistema operacional. Além de poderem ser lentas de bootar
+
+Instalação
+ - Seguir os passos da versão CE conforme o OS (https://docs.docker.com/install/linux/docker-ce/ubuntu)
+ - Configurar Docker para usuário não-root (https://docs.docker.com/install/linux/linux-postinstall/)
+ - só mostrar comandos básicos
+
+Docker-compose
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+
+Laradock
+
