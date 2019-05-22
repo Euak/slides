@@ -116,7 +116,7 @@ summary {
 }
 
 .tabset-dropdown > .nav-tabs > li.active:before {
-  content: "î";
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -124,12 +124,12 @@ summary {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "î";
+  content: "";
   border: none;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "î";
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -197,15 +197,15 @@ $(document).ready(function () {
 
 
 <div id="web-scraping-de-paginas-html" class="section level2">
-<h2>Web Scraping de pÃ¡ginas HTML</h2>
-<p>No tutorial anterior aprendemos como podemos extrair informaÃ§Ãµes por meio de APIs. Mas muitas vezes queremos obter dados de pÃ¡ginas da internet, que por sua vez nÃ£o se encontram em estruturas necessariamente destinadas a tal processo. Assim, como podemos obter apenas as informaÃ§Ãµes que nos interessam quando o conteÃºdo estÃ¡ âespalhadoâ pela pÃ¡gina? Utilizaremos, a estrutura do cÃ³digo HTML da prÃ³pria pÃ¡gina para selecionar apenas o que desejamos e construir a partir disso os data frames.</p>
-<p>Nosso objetivo nessa atividade serÃ¡ capturar uma Ãºnica pÃ¡gina usando a estrutura do cÃ³digo HTML da pÃ¡gina. JÃ¡ sabemos que, uma vez resolvida a captura de uma pÃ¡gina, podemos usar âloopâ para capturar quantas quisermos, desde que tenha uma estrutura semelhante.</p>
-<p>Antes disso, porÃ©m, precisamos falar um pouco sobre XML e HTML.</p>
+<h2>Web Scraping de páginas HTML</h2>
+<p>No tutorial anterior aprendemos como podemos extrair informações por meio de APIs. Mas muitas vezes queremos obter dados de páginas da internet, que por sua vez não se encontram em estruturas necessariamente destinadas a tal processo. Assim, como podemos obter apenas as informações que nos interessam quando o conteúdo está “espalhado” pela página? Utilizaremos, a estrutura do código HTML da própria página para selecionar apenas o que desejamos e construir a partir disso os data frames.</p>
+<p>Nosso objetivo nessa atividade será capturar uma única página usando a estrutura do código HTML da página. Já sabemos que, uma vez resolvida a captura de uma página, podemos usar “loop” para capturar quantas quisermos, desde que tenha uma estrutura semelhante.</p>
+<p>Antes disso, porém, precisamos falar um pouco sobre XML e HTML.</p>
 </div>
 <div id="xml-e-html" class="section level2">
 <h2>XML e HTML</h2>
-<p>XML significa âExtensive Markup Languageâ. Ou seja, Ã© uma linguagem â e, portanto, tem sintaxe â e Ã© uma linguagem com marcaÃ§Ã£o. MarcaÃ§Ã£o, neste caso, significa que todo o conteÃºdo de um documento XML estÃ¡ dentro de âmarcasâ, tambÃ©m conhecidas como âtagsâ. Ã uma linguagem extremamente Ãºtil para transporte de dados â por exemplo, a CÃ¢mara dos Deputados utiliza XML em seu Web Service para disponibilizar dados abertos.</p>
-<p>Por exemplo, se quisermos organizar a informaÃ§Ã£o sobre um indivÃ­duo que assumiu diversos postos pÃºblicos, poderÃ­amos organizar a informaÃ§Ã£o da seguinte maneira:</p>
+<p>XML significa “Extensive Markup Language”. Ou seja, é uma linguagem – e, portanto, tem sintaxe – e é uma linguagem com marcação. Marcação, neste caso, significa que todo o conteúdo de um documento XML está dentro de “marcas”, também conhecidas como “tags”. É uma linguagem extremamente útil para transporte de dados – por exemplo, a Câmara dos Deputados utiliza XML em seu Web Service para disponibilizar dados abertos.</p>
+<p>Por exemplo, se quisermos organizar a informação sobre um indivíduo que assumiu diversos postos públicos, poderíamos organizar a informação da seguinte maneira:</p>
 <pre><code>&lt;politicos&gt;
   &lt;politico&gt;
     &lt;id&gt; 33333 &lt;/id&gt;
@@ -235,20 +235,20 @@ $(document).ready(function () {
   &lt;/politicos&gt;
 &lt;/politicos&gt;</code></pre>
 <div id="tags-nodes-atributos-valores-e-conteudo-na-linguagem-xml" class="section level3">
-<h3>Tags, nodes, atributos, valores e conteÃºdo na linguagem XML</h3>
-<p>Todas as informaÃ§Ãµes em um documento XML estÃ£o dispostas em âtagsâ (id, nome, etc sÃ£o as tags do nosso exemplo). Um documento XML Ã© um conjunto de âtagsâ que contÃ©m hierarquia. Um conjunto de âtagsâ hierarquicamente organizado Ã© chamado de ânodeâ. Por exemplo, no arquivo XML da CÃ¢mara dos Deputados apresentado acima, cada tag polÃ­tico contÃªm diversas outras âtagsâ e formam ânodesâ, ou seja, pedaÃ§os do arquivo XML.</p>
-<p>Em geral, as âtagsâ vem em pares: uma de abertura e outra de fechamento. O que as diferencia Ã© a barra invertida presente na tag de fechamento. Entre as âtagsâ de abertura e fechamento vemos o conteÃºdo da tag, que pode, inclusive, ser outras âtagsâ. Veja os exemplos abaixo:</p>
-<pre><code>&lt;minha_tag&gt; Este Ã© o conteÃºdo da tag &lt;/minha_tag&gt;
+<h3>Tags, nodes, atributos, valores e conteúdo na linguagem XML</h3>
+<p>Todas as informações em um documento XML estão dispostas em “tags” (id, nome, etc são as tags do nosso exemplo). Um documento XML é um conjunto de “tags” que contém hierarquia. Um conjunto de “tags” hierarquicamente organizado é chamado de “node”. Por exemplo, no arquivo XML da Câmara dos Deputados apresentado acima, cada tag político contêm diversas outras “tags” e formam “nodes”, ou seja, pedaços do arquivo XML.</p>
+<p>Em geral, as “tags” vem em pares: uma de abertura e outra de fechamento. O que as diferencia é a barra invertida presente na tag de fechamento. Entre as “tags” de abertura e fechamento vemos o conteúdo da tag, que pode, inclusive, ser outras “tags”. Veja os exemplos abaixo:</p>
+<pre><code>&lt;minha_tag&gt; Este é o conteúdo da tag &lt;/minha_tag&gt;
 &lt;tag_pai&gt;
   &lt;tag_filha&gt;
   &lt;/tag_filha&gt;
 &lt;/tag_pai&gt;
-&lt;tag_pai&gt; ConteÃºdo da tag Pai
-  &lt;tag_filha&gt; ConteÃºdo da tag Filha
+&lt;tag_pai&gt; Conteúdo da tag Pai
+  &lt;tag_filha&gt; Conteúdo da tag Filha
   &lt;/tag_filha&gt;
 &lt;/tag_pai&gt;</code></pre>
-<p>IdentaÃ§Ã£o (espaÃ§os) nos ajudam a ver a hierarquia entre as tags, mas nÃ£o Ã© obrigatÃ³ria. TambÃ©m as quebras de linha sÃ£o opcionais.</p>
-<p>AlÃ©m do conteÃºdo e do nome da tag, Ã© extremamente comum encontrarmos âatributosâ nas tags em bancos de dados e, sobretudo, em cÃ³digos HTML. Atributos ajudam a especificar a tag, ou seja, identificam qual Ã© o seu uso ou carregam quaisquer outras informaÃ§Ãµes referentes. Voltando ao exemplo fictÃ­cio acima, poderÃ­amos transformar a informaÃ§Ã£o do cargo, que hoje Ã© uma tag cargo dentro de outra tag cargo (horrÃ­vel, nÃ£o?) em atributo.</p>
+<p>Identação (espaços) nos ajudam a ver a hierarquia entre as tags, mas não é obrigatória. Também as quebras de linha são opcionais.</p>
+<p>Além do conteúdo e do nome da tag, é extremamente comum encontrarmos “atributos” nas tags em bancos de dados e, sobretudo, em códigos HTML. Atributos ajudam a especificar a tag, ou seja, identificam qual é o seu uso ou carregam quaisquer outras informações referentes. Voltando ao exemplo fictício acima, poderíamos transformar a informação do cargo, que hoje é uma tag cargo dentro de outra tag cargo (horrível, não?) em atributo.</p>
 <p>Em vez de:</p>
 <pre><code>&lt;politicos&gt;
   &lt;politico&gt;
@@ -278,7 +278,7 @@ $(document).ready(function () {
       &lt;/cargos&gt;
   &lt;/politicos&gt;
 &lt;/politicos&gt;</code></pre>
-<p>TerÃ­amos:</p>
+<p>Teríamos:</p>
 <pre><code>&lt;politicos&gt;
   &lt;politico&gt;
     &lt;id&gt; 33333 &lt;/id&gt;
@@ -307,71 +307,71 @@ $(document).ready(function () {
 </div>
 <div id="caminhos-no-xml-e-no-html" class="section level3">
 <h3>Caminhos no XML e no HTML</h3>
-<p>O fato de haver hierarquia nos cÃ³digos XML e HTML nos permite construir âcaminhosâ, como se fossem caminhos de pastas em um computador, dentro do cÃ³digo.</p>
-<p>Por exemplo, o caminho das âtagsâ que contÃ©m a informaÃ§Ã£o ânomeâ em nosso exemplo fictÃ­cio Ã©:</p>
+<p>O fato de haver hierarquia nos códigos XML e HTML nos permite construir “caminhos”, como se fossem caminhos de pastas em um computador, dentro do código.</p>
+<p>Por exemplo, o caminho das “tags” que contém a informação “nome” em nosso exemplo fictício é:</p>
 <p><code>/politicos/politico/nome</code>.</p>
-<p>O caminho das âtagsâ que contÃ©m a informaÃ§Ã£o âpartidoâ em nosso exemplo fictÃ­cio, por sua vez, Ã©:</p>
+<p>O caminho das “tags” que contém a informação “partido” em nosso exemplo fictício, por sua vez, é:</p>
 <p><code>/politicos/politico/cargos/cargo/partido</code>.</p>
-<p>Seguindo tal caminho chegamos Ã s trÃªs âtagsâ que contÃ©m a informaÃ§Ã£o desejada.</p>
-<p>Simples, nÃ£o? Mas hÃ¡ um problema: o que fazer quando chegamos a 3 informaÃ§Ãµes diferentes (o indivÃ­duo em nosso exemplo foi eleito duas vezes pelo PAN e uma pelo PRONA)? HÃ¡ duas alternativas: a primeira, ficamos com as 3 informaÃ§Ãµes armazenadas em um vetor, pois as 3 informaÃ§Ãµes interessam. Isso ocorrerÃ¡ com frequÃªncia.</p>
-<p>Mas se quisermos apenas uma das informaÃ§Ãµes, por exemplo, a de quando o indivÃ­duo foi eleito deputado estadual? Podemos usar os atributos e os valores dos atributos das tag para construir o caminho. Neste caso, terÃ­amos como caminho:</p>
+<p>Seguindo tal caminho chegamos às três “tags” que contém a informação desejada.</p>
+<p>Simples, não? Mas há um problema: o que fazer quando chegamos a 3 informações diferentes (o indivíduo em nosso exemplo foi eleito duas vezes pelo PAN e uma pelo PRONA)? Há duas alternativas: a primeira, ficamos com as 3 informações armazenadas em um vetor, pois as 3 informações interessam. Isso ocorrerá com frequência.</p>
+<p>Mas se quisermos apenas uma das informações, por exemplo, a de quando o indivíduo foi eleito deputado estadual? Podemos usar os atributos e os valores dos atributos das tag para construir o caminho. Neste caso, teríamos como caminho:</p>
 <p><code>/politicos/politico/cargos/cargo[@tipo = 'deputado estadual']/partido</code></p>
-<p>Guarde bem este exemplo: ele serÃ¡ nosso modelo quando tentarmos capturar pÃ¡ginas.</p>
-<p>Vamos supor que queremos poupar nosso trabalho e sabemos que as Ãºnicas âtagsâ com nome âpartidoâ no nosso documento sÃ£o aquelas que nos interessam (isso nunca Ã© verdade em um documento HTML). Podemos simplificar nosso caminho de forma a identificar âtodas as âtagsâ ââ, nÃ£o importa em qual nÃ­vel hierÃ¡rquico do documentoâ. Neste caso, basta usar duas barras:</p>
+<p>Guarde bem este exemplo: ele será nosso modelo quando tentarmos capturar páginas.</p>
+<p>Vamos supor que queremos poupar nosso trabalho e sabemos que as únicas “tags” com nome “partido” no nosso documento são aquelas que nos interessam (isso nunca é verdade em um documento HTML). Podemos simplificar nosso caminho de forma a identificar “todas as ‘tags’ ’’, não importa em qual nível hierárquico do documento”. Neste caso, basta usar duas barras:</p>
 <p><code>//partido</code></p>
-<p>Ou âtodas as tags âpartidoâ que sejam descendentes de âpoliticoâ, nÃ£o importa em qual nÃ­vel hierÃ¡rquico do documentoâ:</p>
+<p>Ou “todas as tags ‘partido’ que sejam descendentes de ‘politico’, não importa em qual nível hierárquico do documento”:</p>
 <p><code>/politicos/politico//partido</code></p>
-<p>Ou ainda âtodas as tags âpartidoâ que sejam descendentes de quaisquer tag âpoliticoâ, nÃ£o importa em qual nÃ­vel hierarquÃ­co do documento para qualquer uma das duasâ:</p>
+<p>Ou ainda “todas as tags ‘partido’ que sejam descendentes de quaisquer tag ‘politico’, não importa em qual nível hierarquíco do documento para qualquer uma das duas”:</p>
 <p><code>//politico//partido</code></p>
-<p>Ou âtodas as âtagsâ filhas de qualquer âtagâ âcargoââ (usa-se um asterisco para indicar âtodasâ):</p>
+<p>Ou “todas as ‘tags’ filhas de qualquer ‘tag’ ‘cargo’” (usa-se um asterisco para indicar ‘todas’):</p>
 <p><code>//cargo/*</code></p>
-<p>Observe o potencial dos âcaminhosâ para a captura de dados: podemos localizar em qualquer documento XML ou HTML uma informaÃ§Ã£o usando a prÃ³pria estrutura do documento. NÃ£o precisamos organizar o documento todo, basta extrair cirurgicamente o que queremos â o que Ã© a regra na raspagem de pÃ¡ginas de internet.</p>
+<p>Observe o potencial dos “caminhos” para a captura de dados: podemos localizar em qualquer documento XML ou HTML uma informação usando a própria estrutura do documento. Não precisamos organizar o documento todo, basta extrair cirurgicamente o que queremos – o que é a regra na raspagem de páginas de internet.</p>
 </div>
 </div>
 <div id="atividade" class="section level2">
 <h2>Atividade</h2>
-<p>Temos um grande problema para resolver. ApÃ³s uma longa semana de seminÃ¡rios, fichamentos e provas, temos um final de semana inteiro para maratornar uma sÃ©rie. Mas eis a questÃ£o: o que assistir? Como somos cientistas de dados, vamos nos basear nos dados disponibilizados na internet. O site Metacritic compila crÃ­ticas de criticos reconhecidos e de diversas publicaÃ§Ãµes, alÃ©m disso, tambÃ©m computa as crÃ­ticas dos usuÃ¡rios, todas elas em forma de score (pontuaÃ§Ã£o). Os scores vÃ£o de 0 a 99 no Metascore (de crÃ­ticos TOP e publicaÃ§Ãµes) e 0 a 10 (de usuÃ¡rios).</p>
-<p>O que iremos fazer Ã© utilizar as duas mÃ©tricas para fazer uma seleÃ§Ã£o das sÃ©ries ou programas de TV mais bem avaliados.</p>
+<p>Temos um grande problema para resolver. Após uma longa semana de seminários, fichamentos e provas, temos um final de semana inteiro para maratornar uma série. Mas eis a questão: o que assistir? Como somos cientistas de dados, vamos nos basear nos dados disponibilizados na internet. O site Metacritic compila críticas de criticos reconhecidos e de diversas publicações, além disso, também computa as críticas dos usuários, todas elas em forma de score (pontuação). Os scores vão de 0 a 99 no Metascore (de críticos TOP e publicações) e 0 a 10 (de usuários).</p>
+<p>O que iremos fazer é utilizar as duas métricas para fazer uma seleção das séries ou programas de TV mais bem avaliados.</p>
 <div id="primeiro-passo---estudar-a-estrutura" class="section level3">
 <h3>Primeiro passo - Estudar a estrutura</h3>
-<p>No site, acessamos a pÃ¡gina <a href="https://www.metacritic.com/browse/tv/score/metascore/all/filtered?sort=desc" class="uri">https://www.metacritic.com/browse/tv/score/metascore/all/filtered?sort=desc</a> para verificar as sÃ©ries mais bem avaliadas. Essa pÃ¡gina exibe uma lista paginada dos programas de tv por ordem de avaliaÃ§Ã£o.</p>
-<p>Para cumprir nosso objetivo precisamos obter as seguintes informaÃ§Ãµes da lista: 1) O tÃ­tulo do programa de TV; 2) O Metascore; 3) O Userscore e o 4) Link (caso queirÃ¡mos obter mais informaÃ§Ãµes).</p>
-<p>Para obter essas informaÃ§Ãµes precisamos entender como o cÃ³digo HTML desta pÃ¡gina estÃ¡ estruturada. No navegador, podemos usar a ferramenta âInspecionar elementoâ para verificar o cÃ³digo HTML de cada elemento ou node. Essa ferramenta pode ser acessada clicando com o botÃ£o direito do mouse e selecionando a opÃ§Ã£o âInspecionarâ (o acesso Ã  ferramenta pode variar de navegador para navegador).</p>
-<p>Fazendo isso em um tÃ­tulo qualquer, verificamos que o tÃ­tulo se encontra contido dentro de uma tag <code>&lt;a&gt;</code>. Mas para elaborar um caminho que pegue apenas as tags <code>&lt;a&gt;</code> de tÃ­tulos, precisamos ser mais especÃ­ficos com nosso caminho. Ao passar o mouse nas tags exteriores a do tÃ­tulo, podemos perceber que uma tag especial envolve todos os elementos que contÃªm as informaÃ§Ãµes dos programas de TV. Essa Ã© a tag <code>&lt;div class=&quot;product_wrap&quot;&gt;</code>. Se fizessÃ©mos alguns testes, poderÃ­amos verificar que essa tag Ã© comum a todos os itens da lista e exclusivos a eles. Isso Ã© muito importante, pois assim pegamos todos os itens e apenas os itens que precisamos.</p>
-<p>Desse modo, temos um caminho para pegar os nodes de programas de TV: <code>//div[@class='product_wrap']</code>. Lembrando que <code>[@class='product_wrap']</code> determina que apenas nodes com o atributo <code>class</code> com o valor igual a âproduct_wrapâ serÃ£o capturados.</p>
-<p>Vamos trabalhar apenas com esse caminho e ao longo da atividade vamos elaborar outros caminhos a partir desse node para obter cada informaÃ§Ã£o.</p>
+<p>No site, acessamos a página <a href="https://www.metacritic.com/browse/tv/score/metascore/all/filtered?sort=desc" class="uri">https://www.metacritic.com/browse/tv/score/metascore/all/filtered?sort=desc</a> para verificar as séries mais bem avaliadas. Essa página exibe uma lista paginada dos programas de tv por ordem de avaliação.</p>
+<p>Para cumprir nosso objetivo precisamos obter as seguintes informações da lista: 1) O título do programa de TV; 2) O Metascore; 3) O Userscore e o 4) Link (caso queirámos obter mais informações).</p>
+<p>Para obter essas informações precisamos entender como o código HTML desta página está estruturada. No navegador, podemos usar a ferramenta “Inspecionar elemento” para verificar o código HTML de cada elemento ou node. Essa ferramenta pode ser acessada clicando com o botão direito do mouse e selecionando a opção “Inspecionar” (o acesso à ferramenta pode variar de navegador para navegador).</p>
+<p>Fazendo isso em um título qualquer, verificamos que o título se encontra contido dentro de uma tag <code>&lt;a&gt;</code>. Mas para elaborar um caminho que pegue apenas as tags <code>&lt;a&gt;</code> de títulos, precisamos ser mais específicos com nosso caminho. Ao passar o mouse nas tags exteriores a do título, podemos perceber que uma tag especial envolve todos os elementos que contêm as informações dos programas de TV. Essa é a tag <code>&lt;div class=&quot;product_wrap&quot;&gt;</code>. Se fizessémos alguns testes, poderíamos verificar que essa tag é comum a todos os itens da lista e exclusivos a eles. Isso é muito importante, pois assim pegamos todos os itens e apenas os itens que precisamos.</p>
+<p>Desse modo, temos um caminho para pegar os nodes de programas de TV: <code>//div[@class='product_wrap']</code>. Lembrando que <code>[@class='product_wrap']</code> determina que apenas nodes com o atributo <code>class</code> com o valor igual a ‘product_wrap’ serão capturados.</p>
+<p>Vamos trabalhar apenas com esse caminho e ao longo da atividade vamos elaborar outros caminhos a partir desse node para obter cada informação.</p>
 </div>
 <div id="segundo-passo---obter-os-nodes" class="section level3">
 <h3>Segundo Passo - Obter os nodes</h3>
 <p>Para essa atividade vamos usar dois pacotes:</p>
 <pre class="r"><code>library(&quot;tidyverse&quot;)
 library(&quot;rvest&quot;)</code></pre>
-<p>Como fizemos no tutorial anterior, vamos acessar a pÃ¡gina. PorÃ©m, desta vez, usaremos o <code>rvest</code> para isso. Vamos armazenar o endereÃ§o da pÃ¡gina em uma variÃ¡vel:</p>
+<p>Como fizemos no tutorial anterior, vamos acessar a página. Porém, desta vez, usaremos o <code>rvest</code> para isso. Vamos armazenar o endereço da página em uma variável:</p>
 <pre class="r"><code>url &lt;- &quot;https://www.metacritic.com/browse/tv/score/metascore/all/filtered?view=condensed&amp;sort=desc&quot;</code></pre>
-<p>Para obter a pÃ¡gina pelo <code>rvest</code>, usamos a funÃ§Ã£o <code>read_html()</code>:</p>
+<p>Para obter a página pelo <code>rvest</code>, usamos a função <code>read_html()</code>:</p>
 <pre class="r"><code>pagina &lt;- read_html(url)</code></pre>
-<p>No <code>rvest</code>, obtemos os nodes pela funÃ§Ã£o <code>html_nodes()</code>:</p>
+<p>No <code>rvest</code>, obtemos os nodes pela função <code>html_nodes()</code>:</p>
 <pre class="r"><code>nodes_shows &lt;- html_nodes(pagina, xpath = &quot;//div[@class='product_wrap']&quot;)</code></pre>
-<p>NOTE que usamos o parÃ¢metro <code>xpath</code> para especificar o caminho dos nodes que queremos. Para essa funÃ§Ã£o, tambÃ©m existe o parÃ¢metro <code>css</code> que Ã© uma alternativa para o <code>xpath</code>.</p>
-<p>Assim, se executarmos os cÃ³digos anteriores obterÃ­amos uma lista com todos os nodes de programas de TV. Mas nÃ£o Ã© isso que queremos. EntÃ£o precisamos ver a estrutura mais uma vez e verificar como esta estruturados esses nodes para obter cada informaÃ§Ã£o.</p>
+<p>NOTE que usamos o parâmetro <code>xpath</code> para especificar o caminho dos nodes que queremos. Para essa função, também existe o parâmetro <code>css</code> que é uma alternativa para o <code>xpath</code>.</p>
+<p>Assim, se executarmos os códigos anteriores obteríamos uma lista com todos os nodes de programas de TV. Mas não é isso que queremos. Então precisamos ver a estrutura mais uma vez e verificar como esta estruturados esses nodes para obter cada informação.</p>
 </div>
 <div id="passo-3---obtendo-os-demais-caminhos" class="section level3">
 <h3>Passo 3 - Obtendo os demais caminhos</h3>
-<p>Vamos primeiro obter um caminho para extrair os tÃ­tulos. Voltando na ferramenta âInspecionar Elementoâ do navegador, podemos verificar que o tÃ­tulo estÃ¡ contido dentro de uma tag <code>&lt;a&gt;</code>, que esta, por sua vez, estÃ¡ contida em uma tag <code>&lt;div class=&quot;basic_stat product_title&quot;&gt;</code>. Podemos, entÃ£o, elaborar o seguinte caminho a partir do node que capturamos: <code>//div[@class='basic_stat product_title']/a</code>. Lembre-se que estamos trabalhando a partir do node <code>&lt;div class=&quot;product_wrap&quot;&gt;</code>. O cÃ³digo fica assim:</p>
+<p>Vamos primeiro obter um caminho para extrair os títulos. Voltando na ferramenta “Inspecionar Elemento” do navegador, podemos verificar que o título está contido dentro de uma tag <code>&lt;a&gt;</code>, que esta, por sua vez, está contida em uma tag <code>&lt;div class=&quot;basic_stat product_title&quot;&gt;</code>. Podemos, então, elaborar o seguinte caminho a partir do node que capturamos: <code>//div[@class='basic_stat product_title']/a</code>. Lembre-se que estamos trabalhando a partir do node <code>&lt;div class=&quot;product_wrap&quot;&gt;</code>. O código fica assim:</p>
 <pre class="r"><code>nodes_link &lt;- html_nodes(nodes_shows, xpath = &quot;//div[@class='basic_stat product_title']/a&quot;) </code></pre>
-<p>NOTE que passamos a variÃ¡vel <code>nodes_shows</code> que criamos anteriormente como parÃ¢metro. Nessa nova variÃ¡vel, podemos obter tanto o tÃ­tulo quanto o link do programa de TV.</p>
-<p>Para obter o conteÃºdo de texto contido na tag use a funÃ§Ã£o <code>html_text()</code>. Desse modo:</p>
+<p>NOTE que passamos a variável <code>nodes_shows</code> que criamos anteriormente como parâmetro. Nessa nova variável, podemos obter tanto o título quanto o link do programa de TV.</p>
+<p>Para obter o conteúdo de texto contido na tag use a função <code>html_text()</code>. Desse modo:</p>
 <pre class="r"><code> titulos &lt;- html_text(nodes_link)</code></pre>
-<p>Agora Ã© sua vez.</p>
+<p>Agora é sua vez.</p>
 </div>
 <div id="exercicios" class="section level3">
-<h3>ExercÃ­cios</h3>
+<h3>Exercícios</h3>
 <ol style="list-style-type: decimal">
-<li>AtravÃ©s da ferramenta âInspecionar Elementoâ verifique caminhos possÃ­veis para obter o Metascore e o User Score.</li>
-<li>Use a funÃ§Ã£o <code>html_nodes()</code> para capturar as informaÃ§Ãµes e armazena-as em um objeto.</li>
-<li>Insira as informaÃ§Ãµes obtidas em um data frame.</li>
-<li>Crie uma terceira mÃ©trica com o Metascore e o User Score.</li>
-<li>Exiba uma lista com os Top 5 programas de TV pela mÃ©trica criada no item anterior.</li>
+<li>Através da ferramenta “Inspecionar Elemento” verifique caminhos possíveis para obter o Metascore e o User Score.</li>
+<li>Use a função <code>html_nodes()</code> para capturar as informações e armazena-as em um objeto.</li>
+<li>Insira as informações obtidas em um data frame.</li>
+<li>Crie uma terceira métrica com o Metascore e o User Score.</li>
+<li>Exiba uma lista com os Top 5 programas de TV pela métrica criada no item anterior.</li>
 </ol>
 </div>
 </div>
